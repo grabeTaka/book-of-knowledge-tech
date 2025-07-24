@@ -4,7 +4,7 @@ const RelationalDatabse = React.lazy(() => import('./views/base/relational-datab
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  { path: '/base/releational-database', name: 'Releational Database', element: RelationalDatabse },
+  { path: '/base/relational-database', name: 'Relational Database', element: RelationalDatabse },
 ]
 
 export default routes
