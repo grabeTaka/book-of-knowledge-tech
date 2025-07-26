@@ -216,27 +216,63 @@ const RelationalDatabase = () => {
               <p> É um tipo de restrição no banco de dados, onde se define que uma coluna nunca será null, será única para aquela tabela e poderá ser referênciada por outra tabela.  </p>
             </div>
 
-            <div className='mt-2'>
+            <div className='mt-5'>
               <h5> O que é uma foreign key? </h5>
               <p> É um tipo de restrição no banco de dados, onde se define que uma coluna irá "apontar" para uma coluna que é a chave primaria de outra tabela, gerando assim relação entre tabelas.  </p>
             </div>
 
-            <div className='mt-2'>
+            <div className='mt-5'>
               <h5> Relacionamento 1:1 </h5>
               <p> Cada registro da tabela A irá se relacionar com um único registro da tabela b.  </p>
               <img src="../../../assets/images/oneToOne.png" alt="Relacionamento 1 para 1" />
             </div>
 
-            <div className='mt-2'>
+            <div className='mt-5'>
               <h5> Relacionamento 1:N </h5>
               <p> Cada registro da tabela A poderá se relacionar com vários registros da tabela b.  </p>
               <img src="../../../assets/images/oneToOne.png" alt="Relacionamento 1 para N" />
             </div>
 
-            <div className='mt-2'>
+            <div className='mt-5'>
               <h5> Relacionamento N:N </h5>
               <p> Cada registro da tabela A poderá se relacionar com vários registros da tabela b, e um registro da tabela B também poderá se relacionar com vários registros da tabela A. </p>
               <img src="../../../assets/images/oneToOne.png" alt="Relacionamento N para N" />
+            </div>
+
+             <div className='mt-5'>
+              <h5> O que é on delete e on update? </h5>
+              <p> Essas clausulas definem para o banco o que fazendo quando um registro "pai" for apagado ou delete, vejamos nesse exemplo prático: </p>
+              <p> Existem duas tabelas no banco de dados uma chamada clientes e outra pedidos, um cliente pode ter um ou muitos pedidos (1:N). Queros apagar os pedidos quando um cliente for deletado da base automaticamente:</p>
+              <code>
+                FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+                  ON DELETE CASCADE
+              </code>
+              <p className="mt-2"> O SQL acima diz que quando um cliente for apagado todas as suas referencias a aquela chave primária também serão apagados. </p>
+            </div>
+
+            <div className="mt-5">
+              <h5> O que são constraints?</h5>
+              <p> São regras definidas ao banco de dados afim de manter a integridade e validade dos dados, os principais tipos de constraints utilizadas são:</p>
+              <ul>
+                <li>
+                  <strong>Primary key:</strong> garante que o registro de uma coluna sempre será único, não nullo, muito utilizado em ids.
+                </li>
+                <li>
+                  <strong>Foreign key:</strong> assegura integridade referencial, é uma coluna que aponta para uma PK de uma outra tabela, estabelecendo relações.
+                </li>
+                <li>
+                  <strong>Unique:</strong> Asseguro que o registro dessa tab ela seja único, porém diferentemente da PK, o registro pode ser nullo e uma tabela pode ter vários campos únicos.
+                </li>
+                <li>
+                  <strong>Check:</strong> Realiza uma verificação antes de registrar ou atualizar um registro na base de dados.
+                </li>
+                <li>
+                  <strong>Not null:</strong> Define que uma coluna jamais poderá ser null.
+                </li>
+                <li>
+                  <strong>Default:</strong> Define um valor padrão para uma coluna caso não seja enviado.
+                </li>
+              </ul>
             </div>
           </CCardBody>
         </CCard>
