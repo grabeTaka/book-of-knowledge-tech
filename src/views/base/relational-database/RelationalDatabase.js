@@ -274,6 +274,189 @@ const RelationalDatabase = () => {
                 </li>
               </ul>
             </div>
+            
+          </CCardBody>
+        </CCard>
+
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>MÓDULO #3 - Consultas no banco de dados</strong>
+          </CCardHeader>
+          <CCardBody>
+            <div className='mt-5'>
+              <h5> Listar todos os registro de uma tabela </h5>
+              <code>
+                SELECT * FROM table_name;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Listar todos os registro de uma tabela, retornando campos específicos </h5>
+              <code>
+                SELECT column_name, column_name2 FROM table_name;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Listar registros com base numa condição </h5>
+              <code>
+                SELECT * FROM table_name
+                WHERE table_name.column_name = 'valor_desejado';
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Listar registros com base em duas condições </h5>
+              <code>
+                SELECT * FROM table_name
+                WHERE table_name.column_name = 'valor_desejado'
+                AND table_name = 'valor_desejado';
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Listar registros com base no aceite de uma ou mais condições </h5>
+              <code>
+                SELECT * FROM table_name
+                WHERE table_name.column_name = 'valor_desejado'
+                OR table_name = 'valor_desejado';
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Listar registros que contem parcialmente um valor </h5>
+              <code>
+                SELECT * FROM table_name
+                WHERE table_name.column_name LIKE 'valor_desejado%';
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Listar registros que contem parcialmente um valor, desconsiderando letras maiuculas e minusculas </h5>
+              <code>
+                SELECT * FROM table_name
+                WHERE table_name.column_name LIKE '%valor_desejado%';
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Listar registros que contem parcialmente um valor, desconsiderando letras maiuculas e minusculas </h5>
+              <code>
+                SELECT * FROM table_name
+                WHERE table_name.column_name LIKE '%valor_desejado%';
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Retornar registros ordenados </h5>
+              <code>
+                SELECT * FROM table_name
+                ORDER BY table_name.column_name DESC;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Retornar registros ordenados por mais de uma coluna </h5>
+              <code>
+                SELECT * FROM table_name
+                ORDER BY table_name.column_name DESC, table_name.column_name ASC;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Retornar registros ordenados por mais de uma coluna </h5>
+              <code>
+                SELECT * FROM table_name
+                limit 'quantidade';
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Retornar registros pulando uma quantidade desejada </h5>
+              <code>
+                SELECT * FROM table_name
+                offset 'quantidade';
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Retornar quantidade de registros </h5>
+              <code>
+                SELECT COUNT(*) FROM table_name;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Retornar quantidade de registros </h5>
+              <code>
+                SELECT COUNT(*) FROM table_name;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Retornar somatório de valores de uma coluna </h5>
+              <code>
+                SELECT SUM(column_name) FROM table_name;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Retornar média de valores de uma coluna </h5>
+              <code>
+                SELECT AVG(column_name) FROM table_name;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Retornar valor máximo e mínimo de uma coluna</h5>
+              <code>
+                SELECT MIN(column_name), MAX(column_name) FROM table_name;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Retornar somatório de um campo, agrupando previamente os registros</h5>
+              <code>
+                SELECT column_name, SUM(column_name2) FROM table_name
+                GROUP BY column_name
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Realizar filtro após uma função de agregação </h5>
+              <p> A diferença do having para o where é que o where aplica o filtro antes da função de agregação  e o having após.</p>
+              <code>
+                SELECT column1, SUM(column2)
+                  FROM table_name
+                  GROUP BY column1
+                  HAVING SUM(column2) = 10;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5>Apagar um registro no banco de dados</h5>
+              <code>
+                DELETE FROM table_name 
+                WHERE table_name.column_name = 'value';
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5>Apagar um registro no banco de dados</h5>
+              <code>
+                DELETE FROM table_name 
+                WHERE table_name.column_name = 'value';
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5>Atualizar um registro no banco de dados</h5>
+              <code>
+                UPDATE table_name
+                SET table_name.column_name = 'value'
+                WHERE table_name.id = 'value';
+              </code>
+            </div>
           </CCardBody>
         </CCard>
       </CCol>
