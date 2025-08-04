@@ -626,6 +626,63 @@ const RelationalDatabase = () => {
             </div>
           </CCardBody>
         </CCard>
+
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>MÓDULO #5 - Avançando um pouco mais</strong>
+          </CCardHeader>
+          <CCardBody>
+            <div className='mt-2'>
+              <h5> O que é VACCUM? </h5>
+              <p> É um comando que limpa os registros que estão marcados como mortos em um banco de dados. Isso ocorre porque o PostgresSQL não apaga fisicamente registros excluídos ele somente os marca como "mortos". O Vaccum é um rotina automática do banco de dados porém pode ser executado manualmente.</p>
+            </div>
+
+            <div className='mt-5'>
+              <h5> O que é uma view? </h5>
+              <p> Uma view é basicamente uma consulta nomeada no banco de dados, que se comporta como uma tabela virtual que armazena somente a definição da consulta e não os registros.</p>
+
+              <p className='mt-2'> Criar uma view:</p>
+              <code> 
+                CREATE VIEW vw_name AS ...rest of query;
+              </code>
+
+              <p className='mt-2'> Retornar dados de uma view</p>
+              <code> 
+                SELECT * FROM vw_name;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> O que é uma materialized view? </h5>
+              <p> Uma materialized view é uma consulta nomeada que armazena os registros resultantes de uma consulta fisicamente, ao criar a materialized view os registros são armazenados nessa tabela virtual, porém não são atualizados automaticamente, necessitando que o responsável atualize manualmente via SQL os registros.</p>
+
+              <p className='mt-2'> Criar uma view:</p>
+              <code> 
+                CREATE MARIALIZED VIEW mt_vw_name AS ...rest of query;
+              </code>
+
+              <p className='mt-2'> Retornar dados de uma view</p>
+              <code> 
+                SELECT * FROM mt_vw_name;
+              </code>
+
+              <p className='mt-2'> Para atualizar os dados da materialized view:</p>
+              <code> 
+                REFRESH MATERIALIZED VIEW mt_view_name;
+              </code>
+            </div>
+
+             <div className='mt-5'>
+                <h5> O que são triggers no banco de dados? </h5>
+                <p> Triggers são gatilhos que são disparados quando ocorre algum evento no banco de dados: INSERT, UPDATE, DELETE, TRUNCATE.</p>
+            </div>
+
+            <div className='mt-5'>
+                <h5> O que são transactions? </h5>
+                <p> É um bloco de comando que é executado como uma unidade atômica, ou seja, ou tudo acontece ou nada acontece.</p>
+            </div>
+          </CCardBody>
+        </CCard>
       </CCol>
     </CRow>
   )
