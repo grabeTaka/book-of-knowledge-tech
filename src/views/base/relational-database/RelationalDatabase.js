@@ -459,6 +459,73 @@ const RelationalDatabase = () => {
             </div>
           </CCardBody>
         </CCard>
+
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>MÓDULO #4 - Joins e relacionamentos de consulta</strong>
+          </CCardHeader>
+          <CCardBody>
+            <div className='mt-2'>
+              <h5> Inner join </h5>
+              <p> É um tipo de junção entre tabelas que retorna somente os registros correspondentes da tabela da esquerda com a tabela da direita.</p>
+              <code> 
+                SELECT * FROM TABLE1
+                INNER JOINT TABLE2
+                ON TABLE1.ID = TABLE2.COLUMN_ID
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Left join </h5>
+              <p> É um tipo de junção entre tabelas que retorna todos os registros da esquerda independente de existir registros correspondentes na tabela da direita.</p>
+              <code> 
+                 SELECT * FROM TABLE1
+                 LEFT JOIN TABLE2
+                 ON TABLE1.ID = TABLE2.COLUMN_ID;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Right join </h5>
+              <p> É um tipo de junção entre tableas que retorna todos os registros da direita independente de existir registros correspondentes na tabela da esquerda.</p>
+              <code> 
+                 SELECT * FROM TABLE1
+                 LEFT JOIN TABLE2
+                 ON TABLE1.ID = TABLE2.COLUMN_ID;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Full outer join </h5>
+              <p> É um tipo de junção que retorna todos os registros tanto da esquerda quanto da direitra independente de existirem correspondencia entre si.</p>
+              <code> 
+                 SELECT * FROM TABLE1
+                 FULL OUTER JOIN TABLE2
+                 ON TABLE1.ID = TABLE2.COLUMN_ID;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Cross Join </h5>
+              <p> É um tipo de junção entre tabelas que retorna todas as combinações possíveis entre a tabela da esquerda com a tabela da direita.</p>
+              <code> 
+                 SELECT * FROM TABLE1
+                 CROSS JOIN TABLE2
+                 ON TABLE1.ID = TABLE2.COLUMN_ID;
+              </code>
+            </div>
+
+            <div className='mt-5'>
+              <h5> Selft Join </h5>
+              <p> É um conceito de junção onde você poderá apalicar INNER JOIN, LEFT JOIN, CROSS JOIN etc, porém a tabela relacionada da esquerda é a mesma tabela da direita.</p>
+              <code> 
+                 SELECT * FROM TABLE1
+                 INNER JOIN TABLE1
+                 ON TABLE1.ID = TABLE1.COLUMN_ID;
+              </code>
+            </div>
+          </CCardBody>
+        </CCard>
       </CCol>
     </CRow>
   )
