@@ -29,8 +29,21 @@ const _nav = [
     items: [
       {
         component: CNavItem,
-        name: 'Accordion',
-        to: '/base/accordion',
+        name: 'Banco relacional',
+        to: '/base/relational-database',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Arquitetura',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Resumo Clean Code',
+        to: '/base/clean-code',
       },
     ],
   },

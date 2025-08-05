@@ -12,7 +12,6 @@ import {
   CTableHeaderCell,
   CTableRow,
 } from '@coreui/react'
-import { DocsComponents, DocsExample } from 'src/components'
 
 const RelationalDatabase = () => {
   return (
@@ -340,14 +339,6 @@ const RelationalDatabase = () => {
             </div>
 
             <div className='mt-5'>
-              <h5> Listar registros que contem parcialmente um valor, desconsiderando letras maiuculas e minusculas </h5>
-              <code>
-                SELECT * FROM table_name
-                WHERE table_name.column_name LIKE '%valor_desejado%';
-              </code>
-            </div>
-
-            <div className='mt-5'>
               <h5> Retornar registros ordenados </h5>
               <code>
                 SELECT * FROM table_name
@@ -364,7 +355,7 @@ const RelationalDatabase = () => {
             </div>
 
             <div className='mt-5'>
-              <h5> Retornar registros ordenados por mais de uma coluna </h5>
+              <h5> Retornar registros com quantidades limitadas </h5>
               <code>
                 SELECT * FROM table_name
                 limit 'quantidade';
@@ -376,13 +367,6 @@ const RelationalDatabase = () => {
               <code>
                 SELECT * FROM table_name
                 offset 'quantidade';
-              </code>
-            </div>
-
-            <div className='mt-5'>
-              <h5> Retornar quantidade de registros </h5>
-              <code>
-                SELECT COUNT(*) FROM table_name;
               </code>
             </div>
 
@@ -442,86 +426,11 @@ const RelationalDatabase = () => {
             </div>
 
             <div className='mt-5'>
-              <h5>Apagar um registro no banco de dados</h5>
-              <code>
-                DELETE FROM table_name 
-                WHERE table_name.column_name = 'value';
-              </code>
-            </div>
-
-            <div className='mt-5'>
               <h5>Atualizar um registro no banco de dados</h5>
               <code>
                 UPDATE table_name
                 SET table_name.column_name = 'value'
                 WHERE table_name.id = 'value';
-              </code>
-            </div>
-          </CCardBody>
-        </CCard>
-
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>MÓDULO #4 - Joins e relacionamentos de consulta</strong>
-          </CCardHeader>
-          <CCardBody>
-            <div className='mt-2'>
-              <h5> Inner join </h5>
-              <p> É um tipo de junção entre tabelas que retorna somente os registros correspondentes da tabela da esquerda com a tabela da direita.</p>
-              <code> 
-                SELECT * FROM TABLE1
-                INNER JOINT TABLE2
-                ON TABLE1.ID = TABLE2.COLUMN_ID
-              </code>
-            </div>
-
-            <div className='mt-5'>
-              <h5> Left join </h5>
-              <p> É um tipo de junção entre tabelas que retorna todos os registros da esquerda independente de existir registros correspondentes na tabela da direita.</p>
-              <code> 
-                 SELECT * FROM TABLE1
-                 LEFT JOIN TABLE2
-                 ON TABLE1.ID = TABLE2.COLUMN_ID;
-              </code>
-            </div>
-
-            <div className='mt-5'>
-              <h5> Right join </h5>
-              <p> É um tipo de junção entre tableas que retorna todos os registros da direita independente de existir registros correspondentes na tabela da esquerda.</p>
-              <code> 
-                 SELECT * FROM TABLE1
-                 LEFT JOIN TABLE2
-                 ON TABLE1.ID = TABLE2.COLUMN_ID;
-              </code>
-            </div>
-
-            <div className='mt-5'>
-              <h5> Full outer join </h5>
-              <p> É um tipo de junção que retorna todos os registros tanto da esquerda quanto da direitra independente de existirem correspondencia entre si.</p>
-              <code> 
-                 SELECT * FROM TABLE1
-                 FULL OUTER JOIN TABLE2
-                 ON TABLE1.ID = TABLE2.COLUMN_ID;
-              </code>
-            </div>
-
-            <div className='mt-5'>
-              <h5> Cross Join </h5>
-              <p> É um tipo de junção entre tabelas que retorna todas as combinações possíveis entre a tabela da esquerda com a tabela da direita.</p>
-              <code> 
-                 SELECT * FROM TABLE1
-                 CROSS JOIN TABLE2
-                 ON TABLE1.ID = TABLE2.COLUMN_ID;
-              </code>
-            </div>
-
-            <div className='mt-5'>
-              <h5> Selft Join </h5>
-              <p> É um conceito de junção onde você poderá apalicar INNER JOIN, LEFT JOIN, CROSS JOIN etc, porém a tabela relacionada da esquerda é a mesma tabela da direita.</p>
-              <code> 
-                 SELECT * FROM TABLE1
-                 INNER JOIN TABLE1
-                 ON TABLE1.ID = TABLE1.COLUMN_ID;
               </code>
             </div>
           </CCardBody>
